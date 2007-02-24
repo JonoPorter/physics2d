@@ -1,5 +1,4 @@
-#summary One-sentence summary of this page.
-
+#summary What has changed in the project each version.
 = Introduction =
 
 This is the ChangeLog for Physics2D.NET
@@ -87,7 +86,6 @@ Added pass by reference versions of most methods.
 Removed all copyrighted code for re-licensing as MIT except for the Quaternion. 
 
 Re-licensed as MIT.
-
 
 
 
