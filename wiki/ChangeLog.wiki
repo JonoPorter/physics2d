@@ -265,6 +265,9 @@ Changed: the SequentialImpulsesSolver.Solve method to copy the Arbiters into an 
 Completely new, See release notes for explanation.
 
 ==AdvanceMath==
+===1.6.1.0===
+fixed: A really retarded bug by me in the MathHelper.TrySolveQuadratic.
+
 ===1.6.0.0===
 Added: a new define: UNSAFE
 
@@ -349,7 +352,6 @@ Added pass by reference versions of most methods.
 Removed all copyrighted code for re-licensing as MIT except for the Quaternion. 
 
 Re-licensed as MIT.
-
 
 
 
