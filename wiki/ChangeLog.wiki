@@ -8,6 +8,42 @@ This is the ChangeLog for Physics2D.NET
 
 
 ==Physics2D.Net==
+===1.4.0.0===
+changed: moved the BroadPhaseDetectionOnly to Shape and made it abstract and read only.
+
+Added: CanGetDistance property to Shape.
+
+changed: renamed Body.StateChanged to PositionChanged and will be only raised when it is changed.
+
+Added: a Transformation property to Body to transform the shape.
+
+changed: refactored some collsion handling.
+
+Added: CanGetcustomIntersection and TryGetCustomIntersection to Shape.
+
+changed: CollsionEventArgs to have extra members to handle custom intersection methods in Shape.
+
+changed: Distance grid to not accept Shapes you cannot GetDistance from.
+
+removed: ICollisionInfo
+
+added: MultiPartPolygon class.
+
+added: PhysicsTimer class.
+
+added: RaySegments class and support classes.
+
+changed: replaced all instances of float with Scalar.
+
+fixed: restitution to Work a whole lot better.
+
+removed: Line shape since it would not work with certain features like the new raySegments Shape. And it can be represented better with a polygon.
+
+changed: made the Body constructor to set last position so the position changed event will fire correctly the first time.
+
+Added: the Shape.IgnoreVertexes property.
+
+
 ===1.3.0.0===
 changed: inlined code in the Body.UpdateVelocity method.
 
@@ -313,7 +349,6 @@ Added pass by reference versions of most methods.
 Removed all copyrighted code for re-licensing as MIT except for the Quaternion. 
 
 Re-licensed as MIT.
-
 
 
 
