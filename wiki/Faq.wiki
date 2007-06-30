@@ -2,10 +2,10 @@
 
 = Frequently Asked Questions =
 
-Q: I try to get the project to compile but I get compile errors about Unit Tests. What’s going on?
+== I try to get the project to compile but I get compile errors about Unit Tests. What’s going on? ==
 
 
-A: The AdvanceMathUnitTest part of the Project is purely for testing and it requires a library to compile called NUnit. It is not necessary to run the Demo or Compile the library you can do two things to solve this (in Visual Studios 2005):
+The AdvanceMathUnitTest part of the Project is purely for testing and it requires a library to compile called NUnit. It is not necessary to run the Demo or Compile the library you can do two things to solve this (in Visual Studios 2005):
 
 Right click on AdvanceMathUnitTest and the select remove. Then it 
 should compile. 
@@ -15,6 +15,7 @@ new instance.
 
 
 
-Q: Where is the Documentation?
+== Where is the Documentation? ==
 
-A: The library itself is well commented using C#’s XML comments these comments are easily accessed via intellisense. But I do plan to add tutorials. You can specifically ask for a tutorial on the Discussion page and I will try to make one for you. 
+The library itself is well commented using C#’s XML comments these comments are easily accessed via intellisense. But I do plan to add tutorials. You can specifically ask for a tutorial on the Discussion page and I will try to make one for you. 
+
