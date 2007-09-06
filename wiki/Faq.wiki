@@ -19,3 +19,6 @@ new instance.
 
 The library itself is well commented using C#’s XML comments these comments are easily accessed via intellisense. But I do plan to add tutorials. You can specifically ask for a tutorial on the Discussion page and I will try to make one for you. 
 
+==How do I remove a Body from the engine? ==
+
+Set its LifeSpan.IsExpired to true. It will be removed in PhysicsEngine.Update
