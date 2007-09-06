@@ -22,3 +22,9 @@ The library itself is well commented using C#’s XML comments these comments ar
 ==How do I remove a Body from the engine? ==
 
 Set its LifeSpan.IsExpired to true. It will be removed in PhysicsEngine.Update
+
+== How do I Make an immoveable platform? ==
+
+Set Body.IgnoresGravity to true and Body.Mass = new MassInfo(float.PositiveInfinity, float.PositiveInfinity).
+
+
