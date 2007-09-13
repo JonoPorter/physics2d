@@ -27,4 +27,8 @@ Set its LifeSpan.IsExpired to true. It will be removed in PhysicsEngine.Update
 
 Set Body.IgnoresGravity to true and Body.Mass = new MassInfo(float.PositiveInfinity, float.PositiveInfinity).
 
+== My Polygons don’t collide what is happening? ==
+
+You most likely have your grid spacing set too large. It’s a parameter in the Polygon’s constructor. The grid spacing is used to create the CollisionGrid which is how Polygons do collision detection. The smaller the value the more accurate it will be. I found having it about 1/4 the size of the smallest feature of a polygon works well. 
+
 
