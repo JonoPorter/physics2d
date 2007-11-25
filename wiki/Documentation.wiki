@@ -1,5 +1,5 @@
 #summary Documentation for the engine.
-
+If you wish to know this engine I would recommend you look at the code and use the intelisense to gain an understanding. This documentation can be incomplete or outdated and as a result could be misleading.
 
 =Basic Concepts=
  * Initializing the Engine
