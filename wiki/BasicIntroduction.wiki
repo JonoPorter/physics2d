@@ -109,3 +109,6 @@ One is the same as for a body just set it Is expired property to true or remove 
 {{{
             joint.Lifetime.IsExpired = true;
 }}}
+
+== Physics Logics ==
+They are logic that is ran on the engine every update. This can be gravity or a velocity limiter. They are created, added, and removed just like Bodies and Joints.
