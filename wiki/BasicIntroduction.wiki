@@ -81,6 +81,7 @@ To add the object is rather simple, just call the corresponding method on the en
             engine.AddBody(body1);
             engine.AddBody(body2);
 }}}
+A body is first added to a pending list and then actually added to the engine on the next call to update. 
 
 === Removing ===
 
@@ -89,4 +90,23 @@ To Remove a object just set it’s lifetime object to expired. It will be remove
             body1.Lifetime.IsExpired = true;
 }}}
 
+==Joints==
+Joints are connections between 2 objects this could be between 2 bodies or between a body and some arbitrary point. This connection causes bodies to affect each other. Like a Hinge joint will cause 2 bodies to act as if they have a door like hinge between them.
+=== Creating ===
+To create a joint you will use that joints constructor. 
+{{{
+            Joint joint = new HingeJoint(body1, body2, new Vector2D(100,0), new Lifespan());
+}}}
+
+=== Adding ===
+Naturally before the joint has any effect it must be added to the engine. 
+{{{
+            engine.AddJoint(joint);
+}}}
+=== Removing ===
+There are 2 ways to remove a joint.
+One is the same as for a body just set it Is expired property to true or remove one of the bodies that is affected by the joint. 
+{{{
+            joint.Lifetime.IsExpired = true;
+}}}
 
