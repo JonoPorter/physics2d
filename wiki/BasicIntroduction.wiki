@@ -97,7 +97,7 @@ To create a joint you will use that joints constructor.
 {{{
             Joint joint = new HingeJoint(body1, body2, new Vector2D(100,0), new Lifespan());
 }}}
-
+The third parameter is the location of the hinge. 
 === Adding ===
 Naturally before the joint has any effect it must be added to the engine. 
 {{{
@@ -109,4 +109,3 @@ One is the same as for a body just set it Is expired property to true or remove 
 {{{
             joint.Lifetime.IsExpired = true;
 }}}
-
