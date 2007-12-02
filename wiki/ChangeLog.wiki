@@ -8,6 +8,88 @@ This is the ChangeLog for Physics2D.NET
 
 
 ==Physics2D.Net==
+===1.5.0.0===
+
+added: "#if !CompactFramework ... #endif"  statements for all non Compact framework compatible code.
+
+changed: PhysicsTimer to be compatible with the Compact framework
+
+removed: most of the classes in Collections.
+
+Added: CFReaderWriterLock which a class to replace the .Net frameworks ReaderWriterLock class since the Compact Framework does not have it. 
+
+Added: ReadOnlyThreadSafeList to replace all those classes in collections.
+
+changed: some code to be do things in a more compact framework friendly manner.
+
+changed: now compiles on compact framework.
+
+Added: The Serializable Attribute to RaySegment and RaySegmentIntersectionInfo.
+
+Changed: The physicsTimer so it no longer tries to abort the Physics thread when it is disposed. (people had security problems with this)
+
+Changed: The physicsTimer to no longer use the Stopwatch class.
+
+fixed: a bug with PhysicsTimer.IsRunning that would cause it not to unpause.
+
+added: some more parameter checking.
+
+added: some minor speed improvements to sweep and prune.
+
+changed: made it so the first ID for a Body is 1.
+
+changed: PhysicsEngine to initialize all its fields in its constructor.
+
+ADDED: SingleSweepDetector this broad phase kicks Sweep and Prunes butt! (inspired by the idea "the fastest code is code that is never executed")
+
+Added: BruteForceDetector this is the slowest possible broad phase for comparison purposes.
+
+added: The Serializable Attribute to more classes.
+
+Added: SelectiveSweepDetector, its more consistent and potentially faster then SingleSweepDetector 
+
+Changed: Redid how I did the compatibility with the Compact Framework to drastically reduce the number of #if statements. 
+
+BREAKING: Changed: renamed all the ignorers to not hav eth word Collision in front of them.
+
+Added: GroupCollection. which holds most of the logic GroupIgnorer did.
+
+BREAKING: Changed: GroupIgnorer so that it uses the new GroupsCollection.
+
+BREAKING: Changed: renamed Body.Ignorer to Body.CollisionIgnorer
+
+Added: AdvGroupIgnorer which has 2 GroupCollections one of the group its part of one of the groups it ignores.
+
+Added: Body.EventIgnorer. this is to allow ignoring of collision events
+
+Added: a bunch of static Methods to MultiPartPolygon.
+
+Added: CreateFromBitmap to MultiPartPolygon. This will return multiple polygons :)
+
+Added: IBitmap and ArrayBitmap that are parameters to the CreateFromBitmap method
+Changed: made it so the CreateFromBitmap method can take a interface to allow for custom Bitmap conversions to not require a large boolean array.
+Changed: Made Major Speed improvment to the MultiPartPolygon.CreateFromBitmap method.
+
+Added: Proxying. Body.*Proxy*, A system to make 2 object appear to be the same. can be used for asteroids style game or a 2D version of portal.
+
+Added: FrameCoherentSAPDetector. SAP = sweep and prune. Its good for very static enviroments. Contributed by Andrew D.Jones
+
+Removed: SingleSweepDetector since SelectiveSweepDetector is better.
+
+Changed: made a few changes suggested by FXcop. Including a few bug fixes.
+
+Renamed: MultiPartPolygon to MultipartPolygon because of FXcop.
+
+Changed: did a global Search and replace for float to Scalar. 
+
+changed: some things to fix serialization
+
+Fixed: the false negative bugs in FrameCoherentSAPDetector. 
+
+fixed: A bug where a body's ID would not be assigned before it was added to the solver or the detector
+
+Added: AddBodyRange, RemoveExpired, and Clear to PhysicsLogic
+
 ===1.4.0.0===
 changed: moved the BroadPhaseDetectionOnly to Shape and made it abstract and read only.
 
@@ -265,6 +347,34 @@ Changed: the SequentialImpulsesSolver.Solve method to copy the Arbiters into an 
 Completely new, See release notes for explanation.
 
 ==AdvanceMath==
+
+===1.7.0.0===
+added: "#if !CompactFramework ... #endif"  statements for all non Compact framework compatible code.
+
+removed: some unneeded code that was not supported by compact framework.
+
+changed: now compiles on compact framework.
+
+Fixed: a bug in BoundingPolygon.GetDistance. It may be slower as a result.
+
+Changed: LineSegment.GetDistance to be a little more optimized.
+
+Fixed: a bug with AdvanceMath.Design.AdvPropertyDescriptor.IsReadOnly.
+
+Fixed: a few problems pointed out by AeHNC in AdvanceMath.Design
+
+Removed: useless using statements
+
+Added: a few Faux Attributes for Compact Framework
+
+Changed: Redid how I did the compatibility with the Compact Framework to drastically reduce the number of #if statements. 
+
+changed: Vector2D.GetAngle to use a more accepted approuch.
+
+Changed: BoundingPolygon.GetDistance to potentially be faster
+
+Changed: renamed MathHelper constants to be closer to XNA
+
 ===1.6.1.0===
 fixed: A really retarded bug by me in the MathHelper.TrySolveQuadratic.
 
@@ -352,8 +462,6 @@ Added pass by reference versions of most methods.
 Removed all copyrighted code for re-licensing as MIT except for the Quaternion. 
 
 Re-licensed as MIT.
-
-
 
 
 
