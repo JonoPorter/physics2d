@@ -1,4 +1,5 @@
 #summary Creating a falling box and floor.
+#labels Phase-Implementation,Tutorial
 _It is recommended to first read the BasicIntroduction page.
 
 = Introduction =
@@ -264,4 +265,4 @@ The floor is actually a physics Body, but ignores the gravity logic (so it doesn
 		}
 }}}
 
-We create one more Body, but this time for a box that is up in the air. The box also has torque applied to itself so when the PhysicsEngine starts it will cause the box to spin, make the collision response when it hits the floor more dramatic.
+We create one more Body, but this time for a box that is up in the air. The box also has torque applied to itself so when the PhysicsEngine starts it will cause the box to spin, making the collision response when it hits the floor more dramatic.
