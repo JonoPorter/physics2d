@@ -37,6 +37,9 @@ namespace Tutorial01_CSharp
 		public frmTutorial()
 		{
 			InitializeComponent();
+			this.Load += new EventHandler(this.Tutorial_Load);
+			this.FormClosing += new FormClosingEventHandler(this.Tutorial_FormClosing);
+			this.RendererWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.RendererWorker_DoWork);
 		}
 
 		IRenderer rdrRenderer;
