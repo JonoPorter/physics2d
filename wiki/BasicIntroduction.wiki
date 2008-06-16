@@ -1,9 +1,11 @@
 #summary Shows a Basic Introduction of the engine.
 #labels Featured,Phase-Deploy
+
+*NOTE: this was written for 1.5 so needs to be updated for 2.0*
+
 You first need to understand how initialize and use the engine.
 This page is meant to give you a general overview on how to do a basic setup of the engine.
 
-*NOTE: this was written for 1.5 so needs to be updated for 2.0*
 
 = Initializing The Engine =
 {{{
