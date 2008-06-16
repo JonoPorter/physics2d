@@ -8,6 +8,116 @@ This is the ChangeLog for Physics2D.NET
 
 
 ==Physics2D.Net==
+===2.0.0.0===
+Fixed: bug with PhysicsTimer that would let it run faster then it should. 
+
+Changed: Made Pivot and Hinge Joint Breakable by adding the DistanceTolerance Property.
+
+Changed: Made it so the PhysicsEngine.Update commands Removes Expired Bodies First 
+instead of last.
+
+Changed: Renamed PivotJoint to FixedHingeJoint.
+
+Added: FixedAngleJoint
+
+Changed: Redid the Lifespan class to get rid of Master and to make it possible to have multiple items have the same lifespan.
+
+Added: TimeStep and used it to replace all internal dt parameters. 
+
+Fixed: UseDouble to work.
+
+Fixed: RaySegments.TryGetCustomIntersection against a MultipartPolygon
+
+Added: GlobalFluidLogic and changes to make it work. 
+
+Added: a bunch of methods and properties to Shape.
+
+Added: PhysicsLogic.Order to allow for Logics to run in a certain order declaratively. 
+
+Added: LinearDamping and AngularDamping Properties to Body. 
+
+Added: MassInfo.Infinite
+
+Fixed: The bug where objects can get trapped inside each other and are next to impossible to separate. 
+
+Added: Shape.Normals as a part to the above bug fix. 
+
+BREAKING Change: Made all shapes stateless. a shape no longe knows or cares what body it is attached too.
+
+Breaking Change: Renamed all shapes to end in “Shape” this for naming conflicts with other libraries.
+
+Added: the Matrices class and property to the body. This used to me the matrix properties on the Shape.
+
+Added: Rectangle property to the Body (this use to be on the shape). 
+
+Changed: Shapes that object that can collide with a RaySegmentsShape to implement a new IRaySegmentsCollidable interface.
+
+Added: the IRaySegmentsCollidable interface.
+
+Changed: Replaced all usage of Matrix3x3 with Matrix3x2.
+
+Changed: Got rid of the Matrix2D struct
+
+Added: Matrices class.
+
+Added: LineFluidLogic and associated classes
+
+Fixed: The RaySegments to work properly with Body.Transform
+
+Changed: put all PhysicsLogics into a PhysicsLogics namespace
+
+Changed: put all Joints into a Joints namespace
+
+Changed: put all Ignorers into a Ignorers namespace
+
+Changed: put all Shapes into a Shapes namespace
+
+Added: RaySegmentsCollisionLogic to manage a RaySegmentsShape
+
+Added: ExplosionLogic
+
+Changed: Removed ApplyMatrix from Body
+
+Changed: Renamed ApplyMatrix to ApplyPosition
+
+Added: SpatialHashDetector
+
+Added: Body.IgnoresPhysicsLogics
+
+Added: OneWayPlatformIgnorer
+
+Changed: Ignorer.CanCollide to take bodies as well as the other Ignorer
+
+Added: Body.IsEventable
+
+Changed: Reorder parameters in PolygonShape.CreateRectangle.
+
+Removed: RectangleShape
+
+Removed: Shape.IsBroadPhaseDetectionOnly
+
+Added: Body.IsBroadPhaseOnly
+
+Added: MousePickingLogic
+
+Added: Body.JointAdded
+
+Added: Body.JointRemoved
+
+Changed: Moved: Shape.IgnoreVertexes To Body
+
+Changed: Moved all static methods in the Shape classes into the new VertexHelper class.
+
+Removed: the shape object now all shape directly impliment IShape.
+
+Added: GroupedOneWayPlatformIgnorer
+
+Added: PhysicsTimer.IsRunningChanged
+
+Changed: Body.Collided Event to only be raised on initial contact. Contact in the event args can get rest.
+
+Changed: Moved where ApplyPosition is called from.
+
 ===1.5.0.0===
 
 added: "#if !CompactFramework ... #endif"  statements for all non Compact framework compatible code.
@@ -348,6 +458,15 @@ Completely new, See release notes for explanation.
 
 ==AdvanceMath==
 
+===2.0.0.0===
+Added: the struct Matrix3x2 and changes to other classes to make it work.
+
+Fixed: Line's GetDistance method
+
+Added: Line.Transform
+
+Fixed: BoundingPolygon.Intersects (thanks DW)
+
 ===1.7.0.0===
 added: "#if !CompactFramework ... #endif"  statements for all non Compact framework compatible code.
 
@@ -462,8 +581,6 @@ Added pass by reference versions of most methods.
 Removed all copyrighted code for re-licensing as MIT except for the Quaternion. 
 
 Re-licensed as MIT.
-
-
 
 
 
