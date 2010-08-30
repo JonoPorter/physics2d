@@ -1,8 +1,6 @@
 #summary Shows a Basic Introduction of the engine.
 #labels Featured,Phase-Deploy
 
-*NOTE: this was written for 1.5 so needs to be updated for 2.0*
-
 You first need to understand how initialize and use the engine.
 This page is meant to give you a general overview on how to do a basic setup of the engine.
 
@@ -48,8 +46,8 @@ The engine allows for multiple shapes to be represented in the engine from circl
 Each Body has a shape which must be defined. Here we create 2 shapes a circle and a Polygon (which is actually a rectangle) 
 {{{
 
-            Shape shape1 = new Circle(8, 7);
-            Shape shape2 = new Polygon(Polygon.CreateRectangle(10, 20),3);
+            IShape shape1 = new CircleShape(8, 7);
+            IShape shape2 = new PolygonShape(VertexHelper.CreateRectangle(10, 20),3);
 }}}
 
 The first parameter for a circle is its radius the second is how many vertices will be created along its perimeter to represent it. 
@@ -63,7 +61,7 @@ The first parameter for the polygon is the list of vertices for the polygon (thi
 Then we combine all the parameters and create the Bodies. 
 {{{
 
-            Scalar mass = 5;
+            float mass = 5;
             Body body1 = new Body(new PhysicsState(), shape1, mass, coffecients, new Lifespan());
             Body body2 = new Body(new PhysicsState(), shape2, mass, coffecients, new Lifespan());
 }}}
