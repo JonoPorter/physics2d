@@ -1,6 +1,10 @@
-#summary Creating a falling box and floor.
+#summary Creating a falling box and floor. By madpew
 #labels Phase-Implementation,Tutorial
 _It is recommended to first read the BasicIntroduction page.
+
+
+Author: madpew
+
 
 = Introduction =
 In this tutorial you will:
